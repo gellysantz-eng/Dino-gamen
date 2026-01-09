@@ -1,0 +1,56 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f7f7f7;
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Impede que a página deslize */
+    touch-action: manipulation; /* Melhora o toque no mobile */
+}
+
+.game-board {
+    width: 95%; /* Usa quase toda a largura do telemóvel */
+    max-width: 600px;
+    height: 200px;
+    border-bottom: 2px solid #555;
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+}
+
+#dino {
+    width: 40px;
+    height: 40px;
+    background-color: #ff4d4d;
+    position: absolute;
+    bottom: 0;
+}
+
+#cactus {
+    width: 25px;
+    height: 35px;
+    background-color: #2ecc71;
+    position: absolute;
+    bottom: 0;
+    right: -30px;
+    animation: moveCactus 1.8s infinite linear;
+}
+
+@keyframes moveCactus {
+    0% { right: -30px; }
+    100% { right: 100%; }
+}
+
+.jump {
+    animation: jumpAnimation 0.5s linear;
+}
+
+@keyframes jumpAnimation {
+    0% { bottom: 0; }
+    30% { bottom: 80px; }
+    70% { bottom: 80px; }
+    100% { bottom: 0; }
+}
